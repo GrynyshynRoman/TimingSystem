@@ -1,3 +1,7 @@
+import core.KeyboardAction;
+import core.RiderTime;
+import core.UsbAction;
+
 /**
  * Created by d3m0 on 21.10.2015.
  */
@@ -7,6 +11,7 @@ public class TimingSystem {
 
         KeyboardAction keyboardAction = new KeyboardAction();
         UsbAction usbAction = new UsbAction();
+
         RiderTime riderTime = new RiderTime();
 
         riderTime.startTime(keyboardAction);
