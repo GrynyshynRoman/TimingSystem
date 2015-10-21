@@ -18,5 +18,7 @@ public class TimingSystem {
         riderTime.startTime(usbAction);
         riderTime.stopTime(keyboardAction);
         riderTime.stopTime(usbAction);
+
+        System.out.println("test");
     }
 }
