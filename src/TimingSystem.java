@@ -9,8 +9,8 @@ public class TimingSystem {
     public static void main(String[] args) {
         System.out.println("We are in main method");
 
-        KeyboardAction keyboardAction = new KeyboardAction();
-        UsbAction usbAction = new UsbAction();
+        Action keyboardAction = new KeyboardAction();
+        Action usbAction = new UsbAction();
 
         RiderTime riderTime = new RiderTime();
 
