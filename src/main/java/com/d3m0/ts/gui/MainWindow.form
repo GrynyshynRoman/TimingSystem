@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.d3m0.ts.gui.MainWindow">
+  <grid id="27dc6" binding="Form1" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="a31ca" class="javax.swing.JButton" binding="startUSBButton" default-binding="true">
+        <constraints/>
+        <properties>
+          <horizontalTextPosition value="0"/>
+          <text value="Start USB"/>
+        </properties>
+      </component>
+      <component id="b914a" class="javax.swing.JButton" binding="stopUSBButton" default-binding="true">
+        <constraints/>
+        <properties>
+          <horizontalTextPosition value="0"/>
+          <text value="Stop USB"/>
+        </properties>
+      </component>
+      <component id="638b5" class="javax.swing.JLabel" binding="label1">
+        <constraints/>
+        <properties>
+          <alignmentX value="0.5"/>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
+          <maximumSize width="100" height="16"/>
+          <minimumSize width="100" height="16"/>
+          <preferredSize width="100" height="16"/>
+          <text value=""/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
