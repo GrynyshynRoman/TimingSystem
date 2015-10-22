@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="TimingSystem" />
+        <module name="timing-system" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="TimingSystem" target="1.8" />
+      <module name="timing-system" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
