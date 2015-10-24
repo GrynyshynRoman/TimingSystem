@@ -4,20 +4,20 @@ package com.d3m0.ts.core;
  * Created by d3m0 on 22.10.2015.
  */
 public class RiderTime {
-    static long startTime;
-    static long stopTime;
+    Rider rider;
 
-    public static long startTime(Action action) {
+    public void startTime(Action action) {
         action.start();
-        return startTime = System.currentTimeMillis();
+        rider = new Rider();
+        rider.start();
     }
 
-    public static long stopTime(Action action) {
+    public void stopTime(Action action) {
         action.stop();
-        return stopTime = System.currentTimeMillis();
+        rider.stop();
     }
 
-    public static String elapsedTime() {
-        return String.valueOf((stopTime - startTime) / 1000.00);
+    public static void elapsedTime() {
+
     }
 }
