@@ -5,9 +5,7 @@
 
 ## Directory-based project format:
 .idea/
-
-# Delete target directory locally, commit, uncomment .target
-#.target/
+.target/
 
 ## File-based project format:
 *.ipr
