@@ -3,7 +3,7 @@ package com.d3m0.ts.core;
 /**
  * Created by d3m0 on 22.10.2015.
  */
-public class Clock {
+public class StopWatch {
     long startTime = 0;
     long endTime = 0;
 

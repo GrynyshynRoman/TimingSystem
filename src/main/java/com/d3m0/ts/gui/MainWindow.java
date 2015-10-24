@@ -1,6 +1,6 @@
 package com.d3m0.ts.gui;
 
-import com.d3m0.ts.core.RiderTime;
+import com.d3m0.ts.core.Race;
 import com.d3m0.ts.core.UsbAction;
 
 import javax.swing.*;
@@ -16,19 +16,21 @@ public class MainWindow {
     private JButton startUSBButton;
     private JButton stopUSBButton;
     private JLabel label1;
+    private Race race = new Race();
 
     public MainWindow() {
         startUSBButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                RiderTime.startTime(new UsbAction());
+                race.startTime(new UsbAction());
             }
         });
         stopUSBButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                RiderTime.stopTime(new UsbAction());
-                label1.setText(RiderTime.elapsedTime());
+                race.stopTime(new UsbAction());
+                label1.setText(race.getRiderNumber() + " " +
+                        String.valueOf(race.elapsedTime()));
             }
         });
     }

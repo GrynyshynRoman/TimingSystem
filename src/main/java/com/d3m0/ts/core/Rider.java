@@ -32,11 +32,11 @@ public class Rider {
         this.riderEndTime = riderEndTime;
     }
 
-    public void start() {
-        riderStartTime = System.currentTimeMillis();
+    public long start() {
+        return riderStartTime = System.currentTimeMillis();
     }
 
-    public void stop() {
-
+    public long stop() {
+        return riderEndTime = System.currentTimeMillis();
     }
 }
