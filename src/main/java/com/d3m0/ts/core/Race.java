@@ -12,6 +12,9 @@ public class Race {
     Rider rider;
     StopWatch stopWatch;
     Map<String, StopWatch> ridersOnTrack = new HashMap<String, StopWatch>();
+    Map<String, StopWatch> finishedRider = new HashMap<String, StopWatch>();
+
+
 
     public void startTime(Action action) {
         action.start();
@@ -25,12 +28,14 @@ public class Race {
         ridersOnTrack.put(rider.getRiderNumber(), stopWatch);
     }
 
-    public void stopTime(Action action) {
-        long stopTime = System.currentTimeMillis();
+    public Map<String, StopWatch> stopTime(Action action) {
         action.stop();
-        rider.stop();
-        String finished = new InputNumberDialog().getNumber("Who's finished?");
-        rider.setRiderEndTime(stopTime);
+        String number = new InputNumberDialog().getNumber("Who's finished?");
+        StopWatch finished = ridersOnTrack.get(number);
+        finished.setEndTime(rider.stop());
+        ridersOnTrack.remove(number);
+        finishedRider.put(number, finished);
+        return finishedRider;
     }
 
     public double elapsedTime() {

@@ -1,11 +1,13 @@
 package com.d3m0.ts.gui;
 
 import com.d3m0.ts.core.Race;
+import com.d3m0.ts.core.StopWatch;
 import com.d3m0.ts.core.UsbAction;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Map;
 
 /**
  * Created by d3m0 on 22.10.2015.
@@ -28,9 +30,8 @@ public class MainWindow {
         stopUSBButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                race.stopTime(new UsbAction());
-                label1.setText(race.getRiderNumber() + " " +
-                        String.valueOf(race.elapsedTime()));
+                Map<String, StopWatch> rider = race.stopTime(new UsbAction());
+//                label1.setText("Number : " + rider.);
             }
         });
     }
