@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.d3m0.ts.gui.MainWindow">
-  <grid id="27dc6" binding="Form1" layout-manager="GridLayoutManager" row-count="2" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="Form1" layout-manager="GridLayoutManager" row-count="3" column-count="16" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="92"/>
+      <xy x="20" y="20" width="814" height="398"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
+      <component id="ef381" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="59a3a" class="javax.swing.JLabel" binding="totalRidersOnTrackLabel">
+        <constraints>
+          <grid row="0" column="15" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="50" height="84"/>
+            <preferred-size width="50" height="84"/>
+            <maximum-size width="50" height="84"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
       <component id="a31ca" class="javax.swing.JButton" binding="startUSBButton" default-binding="true">
         <constraints>
-          <grid row="0" column="0" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <horizontalTextPosition value="0"/>
@@ -19,41 +39,65 @@
       </component>
       <component id="b914a" class="javax.swing.JButton" binding="stopUSBButton" default-binding="true">
         <constraints>
-          <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <horizontalTextPosition value="0"/>
           <text value="Stop USB"/>
         </properties>
       </component>
-      <component id="638b5" class="javax.swing.JLabel" binding="label1">
+      <component id="46ecd" class="javax.swing.JLabel">
         <constraints>
-          <grid row="1" column="2" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <alignmentX value="0.5"/>
-          <horizontalAlignment value="0"/>
-          <horizontalTextPosition value="0"/>
-          <maximumSize width="100" height="16"/>
-          <minimumSize width="100" height="16"/>
-          <preferredSize width="100" height="16"/>
-          <text value=""/>
+          <text value="Rider on start:"/>
         </properties>
+      </component>
+      <component id="a7ef7" class="javax.swing.JTextField" binding="numberByDefault">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="6" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
       </component>
       <component id="cc048" class="javax.swing.JLabel">
         <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="11" row-span="2" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="78" height="84"/>
+          </grid>
         </constraints>
         <properties>
           <text value="Riders on track"/>
         </properties>
       </component>
-      <component id="59a3a" class="javax.swing.JLabel" binding="ridersOnTrackLabel">
+      <component id="34670" class="javax.swing.JLabel">
         <constraints>
-          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="8" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="5" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <text value="Riders on track:"/>
+        </properties>
+      </component>
+      <component id="638b5" class="javax.swing.JLabel" binding="ridersOnTrackLabel">
+        <constraints>
+          <grid row="2" column="10" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="200" height="200"/>
+            <preferred-size width="200" height="200"/>
+            <maximum-size width="200" height="200"/>
+          </grid>
+        </constraints>
+        <properties>
+          <alignmentX value="0.5"/>
+          <horizontalAlignment value="2"/>
+          <horizontalTextPosition value="2"/>
+          <maximumSize width="100" height="16"/>
+          <minimumSize width="100" height="16"/>
+          <preferredSize width="100" height="16"/>
           <text value=""/>
+          <verticalAlignment value="1"/>
+          <verticalTextPosition value="1"/>
         </properties>
       </component>
     </children>

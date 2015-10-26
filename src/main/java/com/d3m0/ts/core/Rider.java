@@ -20,10 +20,6 @@ public class Rider {
         return riderStartTime;
     }
 
-    public void setRiderStartTime(long riderStartTime) {
-        this.riderStartTime = riderStartTime;
-    }
-
     public long getRiderEndTime() {
         return riderEndTime;
     }
@@ -34,10 +30,6 @@ public class Rider {
 
     public long start() {
         return riderStartTime = System.currentTimeMillis();
-    }
-
-    public long stop() {
-        return riderEndTime = System.currentTimeMillis();
     }
 
     public Double getTimeOnTrack() {
