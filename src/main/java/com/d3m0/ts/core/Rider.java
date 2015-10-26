@@ -39,4 +39,8 @@ public class Rider {
     public long stop() {
         return riderEndTime = System.currentTimeMillis();
     }
+
+    public Double getTimeOnTrack() {
+        return (getRiderEndTime() - getRiderStartTime()) / 1000.00;
+    }
 }
