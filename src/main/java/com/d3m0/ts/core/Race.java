@@ -2,19 +2,19 @@ package com.d3m0.ts.core;
 
 import com.d3m0.ts.gui.InputNumberDialog;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by d3m0 on 22.10.2015.
  */
 public class Race {
     private Rider rider;
-    private List<Rider> ridersOnTrack = new ArrayList<Rider>();
+    private Map<String, Rider> ridersOnTrack = new HashMap<String, Rider>();
     private String finishNumber = "";
-    private String startNumber = "";
+    private String defaultNumber;
 
-    public List<Rider> getRidersOnTrack() {
+    public Map<String, Rider> getRidersOnTrack() {
         return ridersOnTrack;
     }
 
@@ -22,47 +22,38 @@ public class Race {
         return finishNumber;
     }
 
-    public String getStartNumber() {
-        return startNumber;
-    }
-
-    public void setStartNumber(String startNumber) {
-        this.startNumber = startNumber;
-    }
-
-    public void setFinishNumber(String finishNumber) {
-        this.finishNumber = finishNumber;
+    public void setDefaultNumber(String defaultNumber) {
+        this.defaultNumber = defaultNumber;
     }
 
     public Rider startTime(Action action) {
         action.start();
         rider = new Rider();
-        rider.start();
-        if (getStartNumber().isEmpty()) {
-            rider.setRiderNumber(new InputNumberDialog().getNumber("Who's starting?"));
-        } else {
-            rider.setRiderNumber(getStartNumber());
-            setStartNumber("");
-        }
-        ridersOnTrack.add(rider);
+        ridersOnTrack.put(getStartNumberFromUI(), rider);
         return rider;
     }
 
     public Rider stopTime(Action action) {
         action.stop();
         long stopTime = System.currentTimeMillis();
-        if (getFinishNumber().isEmpty()) {
-            setFinishNumber(new InputNumberDialog().getNumber("Who's finished?"));
-        }
-        Rider finishedRider = new Rider();
 
-        for (Rider riderOnTrack : ridersOnTrack) {
-            if (riderOnTrack.getRiderNumber().equals(getFinishNumber())) {
-                riderOnTrack.setRiderEndTime(stopTime);
-                finishedRider = riderOnTrack;
-            }
-        }
-        setFinishNumber("");
-        return finishedRider;
+        finishNumber = getFinishNumberFromUI();
+        rider = ridersOnTrack.get(finishNumber);
+        rider.setRiderFinishTime(stopTime);
+
+        rider.setTimeOnTrack(rider.calculateTimeOnTrack());
+        return rider;
+    }
+
+    private String getStartNumberFromUI() {
+        return (defaultNumber.isEmpty()) ? new InputNumberDialog().getNumber("Who's starting?") : defaultNumber;
+    }
+
+    private String getFinishNumberFromUI() {
+        return (defaultNumber.isEmpty()) ? new InputNumberDialog().getNumber("Who's finished?") : defaultNumber;
+    }
+
+    public void removeFinishedRider() {
+        getRidersOnTrack().remove(getFinishNumber());
     }
 }

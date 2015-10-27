@@ -4,35 +4,35 @@ package com.d3m0.ts.core;
  * Created by d3m0 on 24.10.2015.
  */
 public class Rider {
-    private String riderNumber;
     private long riderStartTime;
     private long riderEndTime;
+    private Double timeOnTrack;
 
-    public String getRiderNumber() {
-        return riderNumber;
+    Rider() {
+        setRiderStartTime(System.currentTimeMillis());
     }
 
-    public void setRiderNumber(String riderNumber) {
-        this.riderNumber = riderNumber;
+    public void setRiderStartTime(long riderStartTime) {
+        this.riderStartTime = riderStartTime;
     }
 
-    public long getRiderStartTime() {
-        return riderStartTime;
-    }
-
-    public long getRiderEndTime() {
+    public long getRiderFinishTime() {
         return riderEndTime;
     }
 
-    public void setRiderEndTime(long riderEndTime) {
+    public void setRiderFinishTime(long riderEndTime) {
         this.riderEndTime = riderEndTime;
     }
 
-    public long start() {
-        return riderStartTime = System.currentTimeMillis();
+    public Double getTimeOnTrack() {
+        return timeOnTrack;
     }
 
-    public Double getTimeOnTrack() {
-        return (getRiderEndTime() - getRiderStartTime()) / 1000.00;
+    public void setTimeOnTrack(Double timeOnTrack) {
+        this.timeOnTrack = timeOnTrack;
+    }
+
+    public Double calculateTimeOnTrack() {
+        return (riderEndTime - riderStartTime) / 1000.00;
     }
 }
